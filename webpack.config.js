@@ -1,9 +1,11 @@
 var webpack = require('webpack');
 var path = require('path');
-var HtmlPlugin = require('html-webpack-plugin');
 
-var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
-var APP_DIR = path.resolve(__dirname, 'src/client/app');
+var HtmlPlugin = require('html-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+
+var BUILD_DIR = path.resolve(__dirname, 'public');
+var APP_DIR = path.resolve(__dirname, 'src/app');
 
 
 module.exports = {
@@ -31,7 +33,8 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new HtmlPlugin({ //Handle HTML files
-      template: 'src/client/app/index.html'
-    })
+      template: 'src/app/index.html'
+    }),
+    new OpenBrowserPlugin({ url: 'http://localhost:8080' })
   ]
 }

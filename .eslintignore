@@ -1,4 +1,5 @@
 node_modules/
+public/
 .babelrc
 .eslintrc
 package-lock.json
