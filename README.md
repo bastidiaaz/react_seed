@@ -32,3 +32,13 @@ Instalar `react` y `react-dom`:
 ```
 npm i react react-dom -S
 ```
+Instalar `webpack-dev-server`:
+
+```
+npm install webpack-dev-server --save-dev
+```
+
+Instalar `react-hot-loader`:
+```
+npm install react-hot-loader
+```

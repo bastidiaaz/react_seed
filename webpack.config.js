@@ -7,15 +7,18 @@ var APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 
 module.exports = {
-  entry: APP_DIR + '/index.jsx',
+  entry: [
+    'react-hot-loader/patch',
+    APP_DIR + '/index.jsx',
+  ],
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.jsx$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
